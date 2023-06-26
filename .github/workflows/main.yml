@@ -16,8 +16,8 @@ jobs:
         name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.andreseger }}
-          password: ${{ secrets.dckr_pat_B3WzXKLlZfGnUz7fZBjZXJzMYgA }}
+          username: ${{ secrets.DOCKERHUB_andreseger }}
+          password: ${{ secrets.DOCKERHUB_dckr_pat_B3WzXKLlZfGnUz7fZBjZXJzMYgA }}
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -28,7 +28,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.andreseger }}/clockbox:latest
+          tags: ${{ secrets.DOCKERHUB_andreseger }}/clockbox:latest
     
     
     
